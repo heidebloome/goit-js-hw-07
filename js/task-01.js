@@ -49,7 +49,6 @@ const listEl = document.querySelector('#categories');
 
 const itemsEl = listEl.children;
 
-console.log(itemsEl);
 const categoriesNumber = itemsEl.length;
 const categoriesNumberMessage = `В списке ${categoriesNumber} категории.`;
 console.log(categoriesNumberMessage);
