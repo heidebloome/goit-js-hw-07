@@ -4,14 +4,6 @@
 <ul id="ingredients"></ul>
 В JS есть массив строк.
 
-const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
-];
 Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, 
 после чего вставит все li за одну операцию в список ul.ingredients. 
 Для создания DOM-узлов используй document.createElement().
@@ -25,3 +17,14 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+
+const createItemEl = (ingredient) => {
+  const itemEl = document.createElement('li');
+  itemEl.textContent = ingredient;
+  return itemEl;
+}
+
+const itemsListEl = ingredients.map(createItemEl);
+
+const listEl = document.querySelector('#ingredients');
+listEl.append(...itemsListEl);
