@@ -23,3 +23,15 @@
   border-color: #f44336;
 }
 */
+
+const inputEl = document.querySelector('#validation-input');
+
+inputEl.addEventListener('change', (event) => {
+  if (event.target.value.length === parseInt(inputEl.dataset.length)) {
+    inputEl.classList.remove('invalid');
+    inputEl.classList.add('valid');
+  } else {
+    inputEl.classList.remove('valid');
+    inputEl.classList.add('invalid');
+  }
+});
