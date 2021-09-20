@@ -10,3 +10,24 @@
   <button type="button" data-action="increment">+1</button>
 </div>
 */
+
+let counterValue = 0;
+
+function increment() {
+  counterValue += 1;
+  valueEl.textContent = counterValue;
+  return valueEl;
+}
+
+function decrement() {
+  counterValue -= 1;
+  valueEl.textContent = counterValue;
+  return valueEl;
+}
+
+const incBtnEl = document.querySelector('[data-action="increment"]');
+const decBtnEl = document.querySelector('[data-action="decrement"]');
+const valueEl = document.querySelector('#value');
+
+incBtnEl.addEventListener('click', increment);
+decBtnEl.addEventListener('click', decrement);
