@@ -9,22 +9,16 @@
 Для создания DOM-узлов используй document.createElement().
 */
 
-const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
-];
+const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Помидоры', 'Зелень', 'Приправы'];
 
-const createItemEl = (ingredient) => {
+const listEl = document.querySelector('#ingredients');
+
+const createItemEl = ingredient => {
   const itemEl = document.createElement('li');
   itemEl.textContent = ingredient;
   return itemEl;
-}
+};
 
-const itemsListEl = ingredients.map(createItemEl);
+const itemsEl = ingredients.map(createItemEl);
 
-const listEl = document.querySelector('#ingredients');
-listEl.append(...itemsListEl);
+listEl.append(...itemsEl);

@@ -13,6 +13,9 @@ const textEl = document.querySelector('#text');
 
 inputEl.addEventListener('input', changeFontSize);
 
-function changeFontSize(event) {
-    textEl.style.fontSize = `${event.target.value}` + 'px';
+function changeFontSize() {
+  inputEl.min = 11;
+  inputEl.max = 21;
+  inputEl.step = 0.1;
+  textEl.style.fontSize = `${inputEl.value}` + 'px';
 }

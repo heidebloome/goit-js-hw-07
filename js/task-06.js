@@ -26,12 +26,14 @@
 
 const inputEl = document.querySelector('#validation-input');
 
-inputEl.addEventListener('change', (event) => {
-  if (event.target.value.length === parseInt(inputEl.dataset.length)) {
-    inputEl.classList.remove('invalid');
+inputEl.addEventListener('change', () => {
+  if (inputEl.value.length === parseInt(inputEl.dataset.length)) {
     inputEl.classList.add('valid');
   } else {
-    inputEl.classList.remove('valid');
     inputEl.classList.add('invalid');
   }
+});
+
+inputEl.addEventListener('focus', () => {
+  inputEl.classList.remove('valid', 'invalid');
 });

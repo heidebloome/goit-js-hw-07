@@ -26,11 +26,13 @@ const images = [
   },
 ];
 
-const makeImgEl = ({ url, alt }) => {
-  return `<li><img src="${url}" alt="${alt}>"</li>`;
-}
-
-const imagesListEl = images.map(makeImgEl).join('');
-
 const listEl = document.querySelector('#gallery');
-listEl.insertAdjacentHTML('afterbegin', imagesListEl);
+
+const createImgEl = ({ url, alt }) => {
+  return `<li class="item"><img class="img" src="${url}" alt="${alt}>"</li>`;
+};
+
+const imagesEl = images.map(createImgEl).join('');
+
+listEl.classList.add('list');
+listEl.insertAdjacentHTML('beforeend', imagesEl);

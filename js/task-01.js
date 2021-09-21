@@ -47,13 +47,11 @@
 */
 
 const listEl = document.querySelector('#categories');
-
 const itemsEl = listEl.querySelectorAll('.item');
 
-const categoriesNumber = `В списке ${itemsEl.length} категории.`;
-console.log(categoriesNumber);
+console.log(`В списке ${itemsEl.length} категории.`);
 
 itemsEl.forEach(item => {
   console.log(`Категория: ${item.firstElementChild.textContent}`);
   console.log(`Количество элементов: ${item.lastElementChild.children.length}`);
-})
+});

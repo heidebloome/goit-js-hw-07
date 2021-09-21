@@ -21,3 +21,32 @@
 
 <div id="boxes"></div>
 */
+
+const inputEl = document.querySelector('input');
+const renderBtnEl = document.querySelector('[data-action="render"]');
+const destroyBtnEl = document.querySelector('[data-action="destroy"]');
+const boxesEl = document.querySelector('#boxes');
+
+function createBoxes(amount) {
+  let size = 30;
+  let message = '';
+  for (let i = 1; i <= amount; i += 1) {
+    const color = Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, '0');
+    message += `<div class="box" style="width:${size}px; height:${size}px; background-color: #${color}"></div>`;
+    size += 10;
+  }
+  inputEl.value = '';
+  return boxesEl.insertAdjacentHTML('beforeend', message);
+}
+
+renderBtnEl.addEventListener('click', () => {
+  boxesEl.innerHTML = '';
+  const amount = inputEl.value;
+  createBoxes(amount);
+});
+
+destroyBtnEl.addEventListener('click', () => {
+  boxesEl.innerHTML = '';
+});
